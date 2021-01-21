@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginRight="4dp"
+    app:cardCornerRadius="8dp"
+    android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_game"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/pokemon"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:id="@+id/title_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintTop_toBottomOf="@id/image_game"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Pokemon Sword"/>
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_console"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title_game"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SNES"
+                android:theme="@style/Theme.MaterialComponents.Light"
+
+                />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SNES"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                />
+
+        </com.google.android.material.chip.ChipGroup>
+        <TextView
+            android:id="@+id/text_view_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="OLA ZAUNTIAS AQUI QUEM FALA É O DANIEL OLA ZAUNTIAS AQUI QUEM FALA É O DANIEL
+            OLA ZAUNTIAS AQUI QUEM FALA É O DANIEL
+            OLA ZAUNTIAS AQUI QUEM FALA É O DANIEL"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_console"
+            />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/text_view_description"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:numStars="5"
+            android:rating="3.5"
+            android:stepSize="0.5"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:transformPivotX="0dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOM DIA FAMILIA"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

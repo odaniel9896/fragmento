@@ -6,42 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <LinearLayout
-       android:id="@+id/llButton"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:padding="8dp">
+<!--   <LinearLayout-->
+<!--       android:id="@+id/llButton"-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="wrap_content"-->
+<!--       android:padding="8dp">-->
 
-       <Button
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:text="Home"
-           android:id="@+id/button_home"
-           />
-       <Button
-           android:layout_width="0dp"
-           android:id="@+id/button_consoles"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:text="Consoles"/>
-       <Button
-           android:id="@+id/button_games"
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:layout_weight="1"
-           android:text="Games"/>
+<!--       <Button-->
+<!--           android:layout_width="0dp"-->
+<!--           android:layout_height="wrap_content"-->
+<!--           android:layout_weight="1"-->
+<!--           android:text="Home"-->
+<!--           android:id="@+id/button_home"-->
+<!--           />-->
+<!--       <Button-->
+<!--           android:layout_width="0dp"-->
+<!--           android:id="@+id/button_consoles"-->
+<!--           android:layout_height="wrap_content"-->
+<!--           android:layout_weight="1"-->
+<!--           android:text="Consoles"/>-->
+<!--       <Button-->
+<!--           android:id="@+id/button_games"-->
+<!--           android:layout_width="0dp"-->
+<!--           android:layout_height="wrap_content"-->
+<!--           android:layout_weight="1"-->
+<!--           android:text="Games"/>-->
 
-   </LinearLayout>
+<!--   </LinearLayout>-->
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/llButton"/>
+        android:layout_height="match_parent" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:id="@+id/bottom_navigation\g"
+        android:id="@+id/bottom_navigation"
         app:itemTextColor="@android:color/black"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_navigation"
