@@ -21,7 +21,7 @@ class GameDataSource{
                 "Mortal Kombat",
                 context.getDrawable(R.drawable.mortal)!!,
                 "Mortal Kombat é um jogo",
-                4.5,
+                4.5f,
                 listOf(
                     Console(1, "Playstation 4", "Sony", "1996-12-01"),
                     Console(2, "SNES", "Nintendo", "1996-12-01")
@@ -31,7 +31,7 @@ class GameDataSource{
                 "Mortal Kombat",
                 context.getDrawable(R.drawable.mortal)!!,
                 "Mortal Kombat é um jogo",
-                4.5,
+                4.5f,
                 listOf(
                     Console(1, "Playstation 4", "Sony", "1996-12-01"),
                     Console(2, "SNES", "Nintendo", "1996-12-01")
@@ -41,7 +41,7 @@ class GameDataSource{
                 "Mortal Kombat",
                 context.getDrawable(R.drawable.mortal)!!,
                 "Mortal Kombat é um jogo",
-                4.5,
+                4.5f,
                 listOf(
                     Console(1, "Playstation 4", "Sony", "1996-12-01"),
                     Console(2, "SNES", "Nintendo", "1996-12-01")
