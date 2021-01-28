@@ -18,7 +18,7 @@ class GameDataSource{
 
 
             games.add(Game(1,
-                "Mortal Kombat",
+                "Pokemon Sword",
                 context.getDrawable(R.drawable.mortal)!!,
                 "Mortal Kombat é um jogo",
                 4.5f,
@@ -28,8 +28,8 @@ class GameDataSource{
                 )
                 ))
             games.add(Game(2,
-                "Mortal Kombat",
-                context.getDrawable(R.drawable.mortal)!!,
+                "Pokemon shield",
+                context.getDrawable(R.drawable.pokemo)!!,
                 "Mortal Kombat é um jogo",
                 4.5f,
                 listOf(
@@ -38,8 +38,8 @@ class GameDataSource{
                 )
             ))
             games.add(Game(3,
-                "Mortal Kombat",
-                context.getDrawable(R.drawable.mortal)!!,
+                "Bixo",
+                context.getDrawable(R.drawable.shield)!!,
                 "Mortal Kombat é um jogo",
                 4.5f,
                 listOf(
