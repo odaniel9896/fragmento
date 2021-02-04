@@ -2,9 +2,15 @@ package com.example.testfragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import com.example.testfragment.fragments.BlankFragment
 import com.example.testfragment.fragments.ConsoleFragment
 import com.example.testfragment.fragments.GamesFragment
@@ -16,10 +22,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BottomNavigation
     private lateinit var buttonHome : Button
     private lateinit var buttonConsole : Button
     private lateinit var buttonGames : Button
+    private lateinit var  toolbar: Toolbar
 
     private lateinit var homeFragment : BlankFragment
     private lateinit var gamesFragment : GamesFragment
     private lateinit var consoleFragment : ConsoleFragment
+
+    private lateinit var drawer : DrawerLayout
 
     private lateinit var bottomNavigation : BottomNavigationView
     private lateinit var navigationView: NavigationView
@@ -30,70 +39,70 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, BottomNavigation
         setContentView(R.layout.drawer_navigation)
 
 
-
-//        buttonHome = findViewById(R.id.button_home)
-//        buttonHome.setOnClickListener(this)
-//
-//        buttonConsole = findViewById(R.id.button_consoles)
-//        buttonConsole.setOnClickListener(this)
-//
-//        buttonGames = findViewById(R.id.button_games)
-//        buttonGames.setOnClickListener(this)
-
         bottomNavigation = findViewById(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(this)
 
         navigationView = findViewById(R.id.navigation_view)
         navigationView.setNavigationItemSelectedListener(this)
 
+        toolbar = findViewById(R.id.toolbar)
+        toolbar.setTitle("Home")
+
+        setSupportActionBar(toolbar)
+
+        drawer = findViewById(R.id.drawer)
+
+        var toggle = ActionBarDrawerToggle(this, drawer,
+            toolbar,
+            R.string.open_drawer,
+            R.string.open_drawer)
+
+        drawer.addDrawerListener(toggle)
+
+        //guarda o estado atual do drawble
+        toggle.syncState()
+
         homeFragment = BlankFragment()
         gamesFragment = GamesFragment()
         consoleFragment = ConsoleFragment()
 
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.frame, homeFragment).commit()
-
+        setFragment(homeFragment)
     }
 
   override fun onClick(v: View) {
-//        when(v.id) {
-//            R.id.button_home -> {
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.frame, homeFragment).commit()
-//            }
-//            R.id.button_consoles -> {
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.frame, consoleFragment).commit()
-//            }
-//            R.id.button_games -> {
-//                supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.frame, gamesFragment).commit()
-//            }
-//        }
+
    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.menu_home -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame, homeFragment).commit()
+                toolbar.title = "Home"
+                setFragment(homeFragment)
             }
+
             R.id.menu_console -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame, consoleFragment).commit()
+                toolbar.title = "Console"
+                setFragment(consoleFragment)
             }
             R.id.menu_games -> {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame, gamesFragment).commit()
+                toolbar.title = "Games"
+                setFragment(gamesFragment)
+
             }
         }
+            //MUDA A COR DO BOTTOM NAVIGATION
+        var selectedMenu = bottomNavigation.menu.findItem(item.itemId)
+        selectedMenu.setChecked(true)
+
+        if(drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
+        }
+
         return true
+    }
+    fun setFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame, fragment).commit()
     }
 }
