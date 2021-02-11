@@ -7,7 +7,6 @@
                 android:startColor="@color/colorPrimary"
                 android:endColor="@android:color/background_light"
                 android:angle="270"/>
-            <corners
         </shape>
     </item>
 </selector>
