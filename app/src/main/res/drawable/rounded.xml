@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<ripple android:color="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="oval">
-            <solid android:color="@color/colorAccent"/>
-            <stroke android:color="@color/colorAccent" android:width="2dp"/>
+            <stroke android:color="@android:color/white" android:width="2dp"/>
+            <gradient
+                android:startColor="@color/colorPrimary"
+                android:endColor="@android:color/black"
+                android:angle="270"/>
         </shape>
     </item>
-</selector>
+</ripple>
