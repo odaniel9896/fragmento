@@ -23,8 +23,8 @@ class GameDataSource{
                 "Mortal Kombat é um jogo",
                 4.5f,
                 listOf(
-                    Console(1, "Playstation 4", "Sony", "1996-12-01"),
-                    Console(2, "SNES", "Nintendo", "1996-12-01")
+                    Console(1, "Playstation 4", "Sony", "1996-12-01", context.getDrawable(R.drawable.nintendo)!!),
+                    Console(2, "SNES", "Nintendo", "1996-12-01", context.getDrawable(R.drawable.nintendo)!!)
                 )
                 ))
             games.add(Game(2,
@@ -33,8 +33,8 @@ class GameDataSource{
                 "Mortal Kombat é um jogo",
                 4.5f,
                 listOf(
-                    Console(1, "Playstation 4", "Sony", "1996-12-01"),
-                    Console(2, "SNES", "Nintendo", "1996-12-01")
+                    Console(1, "Playstation 4", "Sony", "1996-12-01", context.getDrawable(R.drawable.nintendo)!!),
+                    Console(2, "SNES", "Nintendo", "1996-12-01", context.getDrawable(R.drawable.nintendo)!!)
                 )
             ))
             games.add(Game(3,
@@ -43,8 +43,8 @@ class GameDataSource{
                 "Mortal Kombat é um jogo",
                 4.5f,
                 listOf(
-                    Console(1, "Playstation 4", "Sony", "1996-12-01"),
-                    Console(2, "SNES", "Nintendo", "1996-12-01")
+                    Console(1, "Playstation 4", "Sony", "1996-12-01", context.getDrawable(R.drawable.nintendo)!!),
+                    Console(2, "SNES", "Nintendo", "1996-12-01", context.getDrawable(R.drawable.nintendo)!!)
                 )
             ))
             return games
